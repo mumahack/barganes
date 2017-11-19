@@ -26,3 +26,11 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.btn-danger {
+  background-color: #f00;
+}
+
+.btn-success {
+  background-color: #0f0;
+}
