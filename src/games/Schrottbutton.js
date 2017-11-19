@@ -10,7 +10,7 @@ class Schrottbutton extends Component {
     }
 
     calculateScore(time) {
-        return time;
+        return Math.round(100000 / Number(time));
     }
 
     render() {
@@ -25,18 +25,18 @@ class Schrottbutton extends Component {
         });
 
         return (
-            <div>
+            <div key='schrottbutton' className='game schrottbutton'>
                 <button onClick={() => { this.props.submit(0) }} >Back to Menu</button>
                 {(results) ?
-                    <div>
+                    <div className='results'>
                         {(results === 'fail') ?
-                            <span><h2>YOU FAILED!</h2><br />Better luck next time!<button onClick={() => { this.props.submit(0) }} >Back to Menu</button></span>
+                            <span className='fail'><h2>YOU FAILED!</h2><br />Better luck next time!<button onClick={() => { this.props.submit(0) }} >Back to Menu</button></span>
                             :
-                            <span><h2>YOU GOT IT!</h2><br />Your reaction time: {results}<br /><br /><button onClick={() => { this.props.submit(this.calculateScore(results)) }}>ADD TO SCORE</button></span>
+                            <span className='success'><h2>YOU GOT IT!</h2><br />Your reaction time: {results}<br /><br /><button onClick={() => { this.props.submit(this.calculateScore(results)) }}>ADD TO SCORE</button></span>
                         }
                     </div>
                     :
-                    <div>
+                    <div className='intro'>
                         <h1>Schrottbutton</h1>
                         <span>How to play "Schrottbutton":</span>
                         <ul>
@@ -48,11 +48,11 @@ class Schrottbutton extends Component {
                             <li>Dis- and Reconnect the button for the next player</li>
                             <li>See the overall score in the main Menu</li>
                         </ul>
-                        {(ready) ? <button className='btn-success'>READY</button> : <button className="btn-danger">NOT READY</button>}
+                        {(ready) ? <button className='ready btn-success'>READY</button> : <button className="not-ready btn-danger">NOT READY</button>}
                         {(this.state.debug) &&
-                            <div>
+                            <div className='debugger'>
                                 <h2>Schrottbutton-Events:</h2>
-                                <ul>
+                                <ul className='events'>
                                     {this.props.data.map(message => <li>{message}</li>)}
                                 </ul>
                             </div>
