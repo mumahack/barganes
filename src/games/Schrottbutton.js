@@ -26,11 +26,11 @@ class Schrottbutton extends Component {
 
         return (
             <div>
-                <button onClick={() => { this.props.submit(0) }} >Back to </button>
+                <button onClick={() => { this.props.submit(0) }} >Back to Menu</button>
                 {(results) ?
                     <div>
                         {(results === 'fail') ?
-                            <span><h2>YOU FAILED!</h2><br />Better luck next time!</span>
+                            <span><h2>YOU FAILED!</h2><br />Better luck next time!<button onClick={() => { this.props.submit(0) }} >Back to Menu</button></span>
                             :
                             <span><h2>YOU GOT IT!</h2><br />Your reaction time: {results}<br /><br /><button onClick={() => { this.props.submit(this.calculateScore(results)) }}>ADD TO SCORE</button></span>
                         }
