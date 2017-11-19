@@ -34,3 +34,56 @@
 .btn-success {
   background-color: #0f0;
 }
+
+.red {
+  color: #f00;
+}
+
+.green {
+  color: #0f0;
+}
+
+.blue {
+  color: rgb(47, 200, 238);
+}
+
+.yellow {
+  color: #ff0;
+}
+
+.purple {
+  color: rgb(58, 12, 151);
+}
+
+.brown {
+  color: #841;
+}
+
+.colour-text.red {
+  border: solid 5px #f00;
+}
+
+.colour-text.green {
+  border: solid 5px #0f0;
+}
+
+.colour-text.blue {
+  border: solid 5px rgb(47, 200, 238);
+}
+
+.colour-text.yellow {
+  border: solid 5px #ff0;
+}
+
+.colour-text.purple {
+  border: solid 5px rgb(58, 12, 151);
+}
+
+.colour-text.brown {
+  border: solid 5px #841;
+}
+
+.colour-text {
+  display: box;
+  margin: 10px;
+}

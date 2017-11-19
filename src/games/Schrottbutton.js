@@ -10,7 +10,26 @@ class Schrottbutton extends Component {
     }
 
     calculateScore(time) {
-        return Math.round(100000 / Number(time));
+        let awesomeReward = 'Bottle of Champaign';
+        let goodReward = 'Flying Hirsch';
+        let mediumReward = 'Augustiner';
+        let lowMediumReward = 'Oettinger Alkoholfrei';
+        let badReward = 'Water';
+        let reallyBadReward = 'Cab waiting outside';
+
+        if (time < 100) {
+            return awesomeReward;
+        } else if (time < 200) {
+            return goodReward;
+        } else if (time < 400) {
+            return mediumReward;
+        } else if (time < 600 ) {
+            return lowMediumReward;
+        } else if (time < 800) {
+            return reallyBadReward;
+        }
+
+        return badReward;
     }
 
     render() {
@@ -32,7 +51,7 @@ class Schrottbutton extends Component {
                         {(results === 'fail') ?
                             <span className='fail'><h2>YOU FAILED!</h2><br />Better luck next time!<br /><button onClick={() => { this.props.submit(0) }} >Back to Menu</button></span>
                             :
-                            <span className='success'><h2>YOU GOT IT!</h2><br />Your reaction time: {results}<br /><br /><button onClick={() => { this.props.submit(this.calculateScore(results)) }}>ADD TO SCORE</button></span>
+                            <span className='success'><h2>YOU GOT IT!</h2><br />Your reaction time: {results}<br />You won: 1x {this.calculateScore(results)}<br /><button onClick={() => { this.props.submit(this.calculateScore(results)) }}>ADD TO SCORE</button></span>
                         }
                     </div>
                     :
