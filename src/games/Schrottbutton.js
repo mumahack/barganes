@@ -30,7 +30,7 @@ class Schrottbutton extends Component {
                 {(results) ?
                     <div className='results'>
                         {(results === 'fail') ?
-                            <span className='fail'><h2>YOU FAILED!</h2><br />Better luck next time!<button onClick={() => { this.props.submit(0) }} >Back to Menu</button></span>
+                            <span className='fail'><h2>YOU FAILED!</h2><br />Better luck next time!<br /><button onClick={() => { this.props.submit(0) }} >Back to Menu</button></span>
                             :
                             <span className='success'><h2>YOU GOT IT!</h2><br />Your reaction time: {results}<br /><br /><button onClick={() => { this.props.submit(this.calculateScore(results)) }}>ADD TO SCORE</button></span>
                         }
