@@ -26,10 +26,10 @@ class Schrottbutton extends Component {
         } else if (time < 600 ) {
             return lowMediumReward;
         } else if (time < 800) {
-            return reallyBadReward;
+            return badReward;
         }
 
-        return badReward;
+        return reallyBadReward;
     }
 
     render() {
